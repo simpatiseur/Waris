@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kromah Waris Moussa - Gardien de But Professionnel | Watanga FC">
+<title>Kromah Waris Moussa | Gardien de But</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold2: #F0C060;
+  --dark: #0A0A0A;
+  --dark2: #111111;
+  --dark3: #1A1A1A;
+  --red: #C0392B;
+  --white: #F5F5F0;
+  --gray: #888;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--white); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px;
+  background: rgba(10,10,10,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.btn-nav {
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold); font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; letter-spacing: 0.15em; padding: 5px 10px; border-radius: 2px; cursor: pointer; transition: all 0.2s;
+}
+.btn-nav:hover { background: var(--gold); color: var(--dark); }
+.nav-links { display: flex; gap: 16px; list-style: none; }
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: stretch;
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #0A0A0A 0%, #1a0a00 50%, #0A0A0A 100%);
+  margin-top: 50px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(192,57,43,0.08) 0%, transparent 50%);
+}
+.hero-number {
+  position: absolute; top: -20px; left: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(180px, 38vw, 380px);
+  color: rgba(201,168,76,0.05); line-height: 1; pointer-events: none; z-index: 1;
+}
+.hero-layout {
+  position: relative; z-index: 2;
+  display: flex; width: 100%; min-height: 100vh;
+  align-items: stretch;
+}
+.hero-left {
+  flex: 0 0 55%; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 80px 24px 60px;
+}
+.hero-right {
+  flex: 0 0 45%; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(201,168,76,0.1), transparent);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-right-img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+}
+.hero-right::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to right, var(--dark) 0%, transparent 30%),
+              linear-gradient(to top, var(--dark) 0%, transparent 25%);
+}
+.hero-right::after {
+  content: ''; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  padding: 6px 16px; border-radius: 2px;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+}
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 12vw, 120px); line-height: 0.9; letter-spacing: 0.02em;
+}
+.hero-name .first { color: var(--white); }
+.hero-name .last { color: var(--gold); display: block; }
+.hero-position {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(16px, 4vw, 24px); font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--gray); margin-top: 12px;
+}
+.hero-position span { color: var(--red); }
+.hero-club {
+  display: flex; align-items: center; gap: 12px; margin-top: 32px; padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.hero-club-icon { width: 48px; height: 48px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.hero-club-info small { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+.hero-club-info strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; }
+.hero-share-btn {
+  margin-top: 20px; display: inline-flex; align-items: center; gap: 8px;
+  background: #25D366; color: #fff; border: none; border-radius: 4px;
+  padding: 10px 20px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em;
+  cursor: pointer; transition: all 0.2s;
+}
+.hero-share-btn:hover { background: #1ebe5d; }
+
+/* PROFILE SECTION */
+.profile-section {
+  background: linear-gradient(135deg, rgba(201,168,76,0.05), transparent);
+  border-radius: 4px; padding: 24px; margin: 32px 24px;
+  border: 1px solid rgba(201,168,76,0.2);
+}
+.profile-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+}
+.profile-header h2 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--gold);
+}
+.profile-info {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+}
+.profile-field {
+  background: var(--dark3); padding: 12px; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.profile-field-label {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 4px;
+}
+.profile-field-value {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+  color: var(--white);
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 300;
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--dark2); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px;
+  padding: 32px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto;
+}
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--gold); }
+.modal-close {
+  background: none; border: none; color: var(--gray); font-size: 1.5rem;
+  cursor: pointer; transition: color 0.2s;
+}
+.modal-close:hover { color: var(--white); }
+
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.form-input, .form-textarea {
+  width: 100%; background: var(--dark3); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 2px; padding: 10px 12px; color: var(--white);
+  font-family: 'Barlow', sans-serif; font-size: 0.9rem; outline: none;
+}
+.form-textarea { resize: vertical; min-height: 80px; }
+
+.btn-group {
+  display: flex; gap: 12px; margin-top: 24px;
+}
+.btn {
+  flex: 1; padding: 10px 20px; border: none;
+  border-radius: 2px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--gold); color: var(--dark); font-weight: 700;
+}
+.btn-primary:hover { background: var(--gold2); }
+.btn-secondary {
+  background: transparent; border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+}
+
+/* TOAST */
+#toast {
+  position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--dark); padding: 12px 24px;
+  border-radius: 4px; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem; font-weight: 700; z-index: 400;
+  transition: bottom 0.3s;
+}
+#toast.show { bottom: 20px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-layout { flex-direction: column; }
+  .hero-left { flex: 1; padding: 60px 20px 40px; }
+  .hero-right { flex: 1; min-height: 300px; }
+  .profile-info { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KWM</div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#stats">Stats</a></li>
+      <li><a href="#skills">Qualités</a></li>
+      <li><a href="#career">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="btn-nav" onclick="openEditModal()">✏️ Profil</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-number" id="heroNum">29</div>
+  <div class="hero-layout">
+    <div class="hero-left">
+      <div class="hero-badge">🎯 Gardien de But Professionnel</div>
+      <div class="hero-name">
+        <span class="first">Kromah</span>
+        <span class="last">Waris</span>
+      </div>
+      <div class="hero-position">Watanga FC <span>• Liberia</span></div>
+      <div class="hero-club">
+        <div class="hero-club-icon">⚽</div>
+        <div class="hero-club-info">
+          <small>Club Actuel</small>
+          <strong>Watanga FC</strong>
+        </div>
+      </div>
+      <button class="hero-share-btn" onclick="shareProfile()">📱 Partager</button>
+    </div>
+    <div class="hero-right">
+      <img id="heroImg" class="hero-right-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba2uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="Kromah Waris Moussa">
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE SECTION -->
+<section class="profile-section">
+  <div class="profile-header">
+    <h2>MON PROFIL</h2>
+    <button class="btn-nav" onclick="openEditModal()">✏️ Éditer</button>
+  </div>
+  <div class="profile-info">
+    <div class="profile-field">
+      <div class="profile-field-label">Nom Complet</div>
+      <div class="profile-field-value" id="pName">Kromah Waris Moussa</div>
+    </div>
+    <div class="profile-field">
+      <div class="profile-field-label">Numéro</div>
+      <div class="profile-field-value" id="pNumber">29</div>
+    </div>
+    <div class="profile-field">
+      <div class="profile-field-label">Club</div>
+      <div class="profile-field-value" id="pClub">Watanga FC</div>
+    </div>
+    <div class="profile-field">
+      <div class="profile-field-label">Nationalité</div>
+      <div class="profile-field-value" id="pNat">🇱🇷 Liberia</div>
+    </div>
+    <div class="profile-field">
+      <div class="profile-field-label">Position</div>
+      <div class="profile-field-value" id="pPos">Gardien de But</div>
+    </div>
+    <div class="profile-field">
+      <div class="profile-field-label">Âge</div>
+      <div class="profile-field-value" id="pAge">24</div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL EDIT -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title">Éditer Mon Profil</h2>
+      <button class="modal-close" onclick="closeEditModal()">✕</button>
+    </div>
+    <form onsubmit="saveProfil(event)">
+      <div class="form-group">
+        <label class="form-label">Nom Complet</label>
+        <input type="text" class="form-input" id="inName" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Numéro de Maillot</label>
+        <input type="number" class="form-input" id="inNumber" min="1" max="99" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Club Actuel</label>
+        <input type="text" class="form-input" id="inClub" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nationalité</label>
+        <input type="text" class="form-input" id="inNat" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Position</label>
+        <input type="text" class="form-input" id="inPos" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Âge</label>
+        <input type="number" class="form-input" id="inAge" min="15" max="50" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Biographie Courte</label>
+        <textarea class="form-textarea" id="inBio" placeholder="Parlez un peu de vous..."></textarea>
+      </div>
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary">💾 Sauvegarder</button>
+        <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ===== API CONFIG =====
+const API_URL = 'https://YOUR_PROJECT_ID.supabase.co';
+const API_KEY = 'YOUR_ANON_KEY';
+
+// ===== PLAYER DATA =====
+let joueur = {
+  id: 'player_001',
+  name: 'Kromah Waris Moussa',
+  number: 29,
+  club: 'Watanga FC',
+  nationality: 'Liberia',
+  position: 'Gardien de But',
+  age: 24,
+  bio: ''
+};
+
+// ===== INIT =====
+window.addEventListener('DOMContentLoaded', function() {
+  chargerProfil();
+});
+
+// ===== LOAD PROFILE =====
+function chargerProfil() {
+  const saved = localStorage.getItem('playerProfile_kwm');
+  if (saved) {
+    joueur = JSON.parse(saved);
+  }
+  afficherProfil();
+}
+
+// ===== DISPLAY PROFILE =====
+function afficherProfil() {
+  document.getElementById('pName').textContent = joueur.name;
+  document.getElementById('pNumber').textContent = joueur.number;
+  document.getElementById('pClub').textContent = joueur.club;
+  document.getElementById('pNat').textContent = '🇱🇷 ' + joueur.nationality;
+  document.getElementById('pPos').textContent = joueur.position;
+  document.getElementById('pAge').textContent = joueur.age;
+  document.getElementById('heroNum').textContent = joueur.number;
+}
+
+// ===== OPEN MODAL =====
+function openEditModal() {
+  document.getElementById('inName').value = joueur.name;
+  document.getElementById('inNumber').value = joueur.number;
+  document.getElementById('inClub').value = joueur.club;
+  document.getElementById('inNat').value = joueur.nationality;
+  document.getElementById('inPos').value = joueur.position;
+  document.getElementById('inAge').value = joueur.age;
+  document.getElementById('inBio').value = joueur.bio;
+  document.getElementById('editModal').classList.add('open');
+}
+
+// ===== CLOSE MODAL =====
+function closeEditModal() {
+  document.getElementById('editModal').classList.remove('open');
+}
+
+// ===== SAVE PROFILE =====
+function saveProfil(e) {
+  e.preventDefault();
+  
+  joueur = {
+    ...joueur,
+    name: document.getElementById('inName').value,
+    number: parseInt(document.getElementById('inNumber').value),
+    club: document.getElementById('inClub').value,
+    nationality: document.getElementById('inNat').value,
+    position: document.getElementById('inPos').value,
+    age: parseInt(document.getElementById('inAge').value),
+    bio: document.getElementById('inBio').value
+  };
+
+  // Save to localStorage
+  localStorage.setItem('playerProfile_kwm', JSON.stringify(joueur));
+  
+  // Try to save to API if configured
+  if (!API_URL.includes('YOUR')) {
+    sauvegarderAPI();
+  }
+
+  afficherProfil();
+  closeEditModal();
+  toast('✅ Profil mis à jour !');
+}
+
+// ===== SAVE TO API =====
+async function sauvegarderAPI() {
+  try {
+    await fetch(`${API_URL}/rest/v1/player_profiles?id=eq.player_001`, {
+      method: 'PATCH',
+      headers: {
+        'apikey': API_KEY,
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(joueur)
+    });
+  } catch (err) {
+    console.log('API non disponible');
+  }
+}
+
+// ===== SHARE =====
+function shareProfile() {
+  const txt = `🧤 Découvrez ${joueur.name}\n⚽ ${joueur.club} | ${joueur.nationality}\n📍 ${joueur.position}`;
+  if (navigator.share) {
+    navigator.share({ title: joueur.name, text: txt, url: window.location.href });
+  } else {
+    window.open('https://wa.me/?text=' + encodeURIComponent(txt), '_blank');
+  }
+}
+
+// ===== TOAST =====
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// Close modal on overlay click
+document.getElementById('editModal').addEventListener('click', function(e) {
+  if (e.target === this) closeEditModal();
+});
+</script>
+
+</body>
+</html>
