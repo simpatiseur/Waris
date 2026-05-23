@@ -1,0 +1,9 @@
+{
+  "name": "PlayerWaris",
+  "short_name": "PlayerWaris",
+  "description": "PlayerWaris is a real-time football scouting platform that connects talented players with recruiters, scouts, clubs, and agents worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff88"
+}
