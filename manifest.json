@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "description": "Kromah Waris Moussa - Gardien de But Professionnel | Watanga FC\n\n{\n  \"name\": \"PlayerWaris\",\n  \"short_name\": \"PlayerWaris\",\n  \"description\": \"PlayerWaris is a real-time football scouting platform that connects talented players with recruiters, scouts, clubs, and agents worldwide.\",\n  \"start_url\": \"/\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#000000\",\n  \"theme_color\": \"#00ff88\"\n}",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "PlayerWaris",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "PlayerWaris",
+  "start_url": "/https://playerwaris.netlify.app/",
+  "theme_color": "#ffffff",
+  "lang": "en"
+}
