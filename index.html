@@ -1653,5 +1653,22 @@ if ('serviceWorker' in navigator) {
     .then(() => console.log('Service Worker Registered'));
 }
 </script>
+  <script>
+const scoutTips = [
+  "Recruiters often decide within the first 30 seconds of a highlight video.",
+  "Keep your highlight videos under 3 minutes for maximum attention.",
+  "Professional photos increase recruiter confidence.",
+  "Updated statistics make your profile more credible.",
+  "Quick responses can create more opportunities.",
+  "Consistency and activity improve scouting visibility.",
+  "Show your strongest qualities first in every video.",
+  "Using English can attract international clubs and agents."
+];
+
+const today = new Date().getDate();
+const selectedTip = scoutTips[today % scoutTips.length];
+
+document.getElementById("dailyTip").innerText = selectedTip;
+  </script>
 </body>
 </html>
