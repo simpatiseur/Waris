@@ -437,6 +437,35 @@ footer span { color:var(--gold); }
 </style>
 </head>
 <body>
+  <!-- WhatsApp Recruiter Button -->
+<a href="https://wa.me/2250584608491?text=Hello%20I%20am%20interested%20in%20the%20player" 
+   target="_blank"
+   style="
+   position:fixed;
+   bottom:90px;
+   right:20px;
+   background:#c9a227;
+   color:black;
+   padding:14px 18px;
+   border-radius:50px;
+   font-weight:bold;
+   text-decoration:none;
+   z-index:9999;
+   box-shadow:0 4px 12px rgba(0,0,0,0.4);
+   ">
+   💬 WhatsApp Scout Contact
+</a>
+
+<!-- Recruiter Visit Notification -->
+<script>
+let visits = localStorage.getItem("playerwaris_visits") || 0;
+visits++;
+localStorage.setItem("playerwaris_visits", visits);
+
+setTimeout(() => {
+  alert("👀 Recruiter visit detected");
+}, 3000);
+</script>
 
 <!-- NAV -->
 <nav>
