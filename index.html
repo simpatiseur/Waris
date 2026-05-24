@@ -553,42 +553,70 @@ setTimeout(() => {
   </div>
 </section>
 
-<!-- GALERIE -->
-<section id="galerie" class="gallery-section">
-  <div class="section-label reveal" data-fr="Photos" data-en="Photos">Photos</div>
-  <div class="section-title reveal" data-fr="Galerie" data-en="Gallery">Galerie</div>
-  <div class="gallery-tabs reveal">
-    <button class="gallery-tab active" onclick="switchTab(this,'all')" data-fr="Tout" data-en="All">Tout</button>
-    <button class="gallery-tab" onclick="switchTab(this,'match')" data-fr="Matchs" data-en="Matches">Matchs</button>
-    <button class="gallery-tab" onclick="switchTab(this,'training')" data-fr="Entraînements" data-en="Training">Entraînements</button>
-    <button class="gallery-tab" onclick="switchTab(this,'celebration')" data-fr="Célébrations" data-en="Celebrations">Célébrations</button>
+<!-- FEATURED HIGHLIGHTS -->
+<section class="gallery-section">
+
+  <div class="section-label reveal">
+    Match Highlights
   </div>
-  <div class="gallery-grid reveal" id="galleryGrid">
-    <div class="gallery-item wide" data-cat="match">
-      <div class="gallery-placeholder"><div class="gi">📸</div><span data-fr="Photo de match — à ajouter" data-en="Match photo — to add">Photo de match — à ajouter</span></div>
-      <div class="gallery-overlay"><span data-fr="Match vs. rival" data-en="Match vs. rival">Match vs. rival</span></div>
-    </div>
-    <div class="gallery-item" data-cat="training">
-      <div class="gallery-placeholder"><div class="gi">🧤</div><span data-fr="Entraînement" data-en="Training">Entraînement</span></div>
-      <div class="gallery-overlay"><span data-fr="Session d'arrêts" data-en="Save session">Session d'arrêts</span></div>
-    </div>
-    <div class="gallery-item" data-cat="celebration">
-      <div class="gallery-placeholder"><div class="gi">🏆</div><span data-fr="Célébration" data-en="Celebration">Célébration</span></div>
-      <div class="gallery-overlay"><span data-fr="Victoire" data-en="Victory">Victoire</span></div>
-    </div>
-    <div class="gallery-item" data-cat="match">
-      <div class="gallery-placeholder"><div class="gi">⚽</div><span data-fr="Match" data-en="Match">Match</span></div>
-      <div class="gallery-overlay"><span>Clean sheet</span></div>
-    </div>
-    <div class="gallery-item" data-cat="training">
-      <div class="gallery-placeholder"><div class="gi">💪</div><span data-fr="Préparation physique" data-en="Physical prep">Préparation physique</span></div>
-      <div class="gallery-overlay"><span>Conditioning</span></div>
-    </div>
+
+  <div class="section-title reveal">
+    Featured Highlights
   </div>
-  <input type="file" id="photoInput" accept="image/*" style="display:none" multiple onchange="handleUpload(event)">
-  <button class="gallery-upload-btn reveal" onclick="document.getElementById('photoInput').click()">
-    ➕ <span data-fr="Ajouter des photos" data-en="Add photos">Ajouter des photos</span>
-  </button>
+
+  <p class="contact-subtitle reveal">
+    Watch the best moments, saves and performances.
+  </p>
+
+  <div class="stats-grid">
+
+    <div class="stat-card reveal">
+      <video controls poster="icon-512.png" style="
+        width:100%;
+        border-radius:15px;
+        margin-bottom:15px;
+      ">
+        <source src="highlight1.mp4" type="video/mp4">
+      </video>
+
+      <div class="stat-label">⚽ Reflex Saves</div>
+      <div class="stat-desc">
+        Quick reactions and close-range saves.
+      </div>
+    </div>
+
+    <div class="stat-card reveal">
+      <video controls poster="icon-512.png" style="
+        width:100%;
+        border-radius:15px;
+        margin-bottom:15px;
+      ">
+        <source src="highlight2.mp4" type="video/mp4">
+      </video>
+
+      <div class="stat-label">🎯 Long Distribution</div>
+      <div class="stat-desc">
+        Accurate passing and ball distribution.
+      </div>
+    </div>
+
+    <div class="stat-card reveal">
+      <video controls poster="icon-512.png" style="
+        width:100%;
+        border-radius:15px;
+        margin-bottom:15px;
+      ">
+        <source src="highlight3.mp4" type="video/mp4">
+      </video>
+
+      <div class="stat-label">🧤 One vs One Saves</div>
+      <div class="stat-desc">
+        Strong positioning and composure under pressure.
+      </div>
+    </div>
+
+  </div>
+
 </section>
 
 <!-- VIDÉOS -->
