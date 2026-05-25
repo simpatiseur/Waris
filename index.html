@@ -476,7 +476,68 @@ footer span { color:var(--gold); }
   }
 }
 
+/* FIX HERO MOBILE */
+@media (max-width: 768px){
 
+  .hero-layout{
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-right{
+    order: 1;
+    width: 100%;
+    height: 58vh;
+    flex: none;
+  }
+
+  .hero-right img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transform: scale(1);
+  }
+
+  .hero-left{
+    order: 2;
+    width: 100%;
+    flex: none;
+    padding: 24px 20px 40px;
+    background: linear-gradient(
+      to top,
+      rgba(10,10,10,0.98),
+      rgba(10,10,10,0.88)
+    );
+  }
+
+  .hero-right::before{
+    background:
+      linear-gradient(
+        to top,
+        rgba(10,10,10,0.92) 0%,
+        transparent 45%
+      );
+  }
+
+  .hero-name{
+    font-size: clamp(52px, 15vw, 88px);
+  }
+
+  .hero-club{
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hero-share-btn,
+  .theme-btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+             }
 </style>
 </head>
 <body>
