@@ -16,14 +16,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold: #C9A84C;
-  --gold2: #F0C060;
+
+  --accent: #C9A84C;
+
+  --gold: var(--accent);
+  --gold2: var(--accent);
+
   --dark: #0A0A0A;
   --dark2: #111111;
   --dark3: #1A1A1A;
+
   --red: #C0392B;
+
   --white: #F5F5F0;
+
   --gray: #888;
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+  --radius: 22px;
+
+  --transition: all 0.35s ease;
+
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -435,6 +449,33 @@ footer span { color:var(--gold); }
     padding-bottom:48px;
   }
 }
+  .theme-btn{
+
+  background:var(--accent);
+
+  color:white;
+
+  border:none;
+
+  padding:12px 22px;
+
+  border-radius:14px;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  margin-top:15px;
+
+  transition:0.3s;
+
+  width:100%;
+}
+
+.theme-btn:hover{
+
+  transform:scale(1.05);
+                                                                           }
 </style>
 </head>
 <body>
@@ -513,6 +554,9 @@ setTimeout(() => {
       </div>
       <button class="hero-share-btn" onclick="shareProfile()">
         📲 <span data-fr="Partager mon profil" data-en="Share my profile">Partager mon profil</span>
+      </button>
+      <button onclick="changeTheme()" class="theme-btn">
+🎨 Change Theme
       </button>
     </div>
     <div id="heroBanner" class="hero-right">
@@ -1883,6 +1927,48 @@ setInterval(() => {
   heroImage.src = banners[currentBanner];
 
 }, 5000);
+
+  </script>
+  <script>
+
+const themes = [
+  "#C9A84C",
+  "#3498DB",
+  "#E74C3C",
+  "#2ECC71",
+  "#9B59B6"
+];
+
+let currentTheme = 0;
+
+function changeTheme() {
+
+  currentTheme++;
+
+  if(currentTheme >= themes.length){
+    currentTheme = 0;
+  }
+
+  document.documentElement.style
+    .setProperty("--accent", themes[currentTheme]);
+
+  localStorage.setItem(
+    "playerwaris-theme",
+    themes[currentTheme]
+  );
+}
+
+window.onload = () => {
+
+  const savedTheme =
+    localStorage.getItem("playerwaris-theme");
+
+  if(savedTheme){
+
+    document.documentElement.style
+      .setProperty("--accent", savedTheme);
+  }
+};
 
   </script>
 </body>
