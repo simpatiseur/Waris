@@ -571,7 +571,8 @@ setTimeout(() => {
   <div class="stats-grid">
 
     <div class="stat-card reveal">
-      <video controls poster="icon-512.png" style="
+      <video controls poster="icon-512.png"
+onclick="openVideo(this)" style="
         width:100%;
         border-radius:15px;
         margin-bottom:15px;
@@ -586,7 +587,8 @@ setTimeout(() => {
     </div>
 
     <div class="stat-card reveal">
-      <video controls poster="icon-512.png" style="
+      <video controls poster="icon-512.png"
+onclick="openVideo(this)" style="
         width:100%;
         border-radius:15px;
         margin-bottom:15px;
@@ -601,7 +603,8 @@ setTimeout(() => {
     </div>
 
     <div class="stat-card reveal">
-      <video controls poster="icon-512.png" style="
+      <video controls poster="icon-512.png"
+onclick="openVideo(this)" style="
         width:100%;
         border-radius:15px;
         margin-bottom:15px;
@@ -1697,6 +1700,65 @@ const today = new Date().getDate();
 const selectedTip = scoutTips[today % scoutTips.length];
 
 document.getElementById("dailyTip").innerText = selectedTip;
+  </script>
+  <!-- VIDEO MODAL -->
+<div id="videoModal" style="
+display:none;
+position:fixed;
+z-index:9999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+padding:20px;
+">
+
+  <span onclick="closeVideo()" style="
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
+  z-index:10000;
+  ">
+  &times;
+  </span>
+
+  <video id="popupVideo" controls style="
+  width:100%;
+  max-width:900px;
+  max-height:90vh;
+  border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.8);
+  ">
+  </video>
+
+</div>
+  <script>
+function openVideo(video) {
+  const modal = document.getElementById("videoModal");
+  const popupVideo = document.getElementById("popupVideo");
+
+  popupVideo.src = video.querySelector("source").src;
+
+  modal.style.display = "flex";
+
+  popupVideo.play();
+}
+
+function closeVideo() {
+  const modal = document.getElementById("videoModal");
+  const popupVideo = document.getElementById("popupVideo");
+
+  popupVideo.pause();
+  popupVideo.src = "";
+
+  modal.style.display = "none";
+}
   </script>
 </body>
 </html>
