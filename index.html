@@ -538,6 +538,24 @@ footer span { color:var(--gold); }
   }
 
              }
+  /* CINEMATIC BANNER */
+
+#heroBanner{
+  position: relative;
+  overflow: hidden;
+}
+
+#heroBanner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    opacity 0.8s ease,
+    transform 4s ease;
+
+  opacity: 1;
+    }
 </style>
 </head>
 <body>
@@ -1981,19 +1999,31 @@ const banners = [
 
 let currentBanner = 0;
 
+const heroBanner = document.getElementById("heroBanner");
+
+heroBanner.innerHTML = `
+  <img id="bannerImg" src="${banners[0]}" alt="banner">
+`;
+
+const bannerImg = document.getElementById("bannerImg");
+
 setInterval(() => {
 
-  currentBanner++;
+  bannerImg.style.opacity = "0";
+  bannerImg.style.transform = "scale(1.08)";
 
-  if (currentBanner >= banners.length) {
-    currentBanner = 0;
-  }
+  setTimeout(() => {
 
-  const heroImage = document.querySelector("#heroBanner img");
+    currentBanner = (currentBanner + 1) % banners.length;
 
-  heroImage.src = banners[currentBanner];
+    bannerImg.src = banners[currentBanner];
 
-}, 5000);
+    bannerImg.style.opacity = "1";
+    bannerImg.style.transform = "scale(1)";
+
+  }, 500);
+
+}, 4000);
 
   </script>
   <script>
