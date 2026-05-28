@@ -556,6 +556,164 @@ footer span { color:var(--gold); }
 
   opacity: 1;
     }
+  /* ===== MODERN UI ===== */
+
+body{
+  background:#f4f7fb;
+  font-family:'Segoe UI',sans-serif;
+}
+
+/* HEADER */
+.topbar{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#fff;
+  box-shadow:0 4px 18px rgba(0,0,0,.15);
+}
+
+/* CARDS */
+.card,
+.art-card,
+.profile-card{
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  border:none;
+  transition:.25s ease;
+}
+
+.card:hover,
+.art-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 35px rgba(0,0,0,.12);
+}
+
+/* BOUTONS */
+button,
+.btn{
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  color:#fff;
+  font-weight:600;
+  transition:.2s;
+  box-shadow:0 6px 16px rgba(37,99,235,.25);
+}
+
+button:hover,
+.btn:hover{
+  transform:scale(1.03);
+  opacity:.95;
+}
+
+/* INPUTS */
+input,
+textarea,
+select{
+  border:1px solid #dbe3ee;
+  border-radius:14px;
+  padding:12px;
+  background:#fff;
+  transition:.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#3b82f6;
+  box-shadow:0 0 0 4px rgba(59,130,246,.12);
+  outline:none;
+}
+
+/* MESSAGE UI */
+.msg-chat-header{
+  background:linear-gradient(135deg,#1d4ed8,#2563eb);
+  color:#fff;
+  padding:14px;
+  border-radius:18px 18px 0 0;
+  font-weight:700;
+}
+
+.msg-messages{
+  background:#f8fafc;
+  padding:14px;
+}
+
+.msg-bubble{
+  padding:12px 15px;
+  border-radius:18px;
+  margin-bottom:12px;
+  max-width:80%;
+  font-size:.95rem;
+  animation:fadeIn .25s ease;
+}
+
+.msg-bubble.sent{
+  background:#2563eb;
+  color:#fff;
+  margin-left:auto;
+  border-bottom-right-radius:5px;
+}
+
+.msg-bubble.recv{
+  background:#fff;
+  color:#111;
+  border-bottom-left-radius:5px;
+  box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.msg-input-bar{
+  background:#fff;
+  padding:12px;
+  border-top:1px solid #eee;
+}
+
+.msg-send{
+  border-radius:50%;
+  width:48px;
+  height:48px;
+  font-size:1rem;
+}
+
+/* LISTE ARTISANS */
+.msg-item{
+  background:#fff;
+  border-radius:18px;
+  margin-bottom:10px;
+  transition:.2s;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.msg-item:hover{
+  transform:translateX(4px);
+}
+
+.msg-item.active{
+  border:2px solid #3b82f6;
+}
+
+/* PHOTOS */
+img{
+  border-radius:18px;
+}
+
+/* NAVBAR */
+.bottom-nav{
+  background:#fff;
+  border-top:1px solid #e5e7eb;
+  box-shadow:0 -4px 18px rgba(0,0,0,.06);
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+  }
 </style>
 </head>
 <body>
